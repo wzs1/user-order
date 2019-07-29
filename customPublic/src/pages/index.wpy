@@ -1,0 +1,196 @@
+<style lang="less">
+@import '../styles/index';
+</style>
+
+<template>
+  <view class="menu">
+    <view class="tab-header">
+      <view>
+        <view class="active">菜单</view>
+      </view>
+      <view>
+        <view>商家</view>
+      </view>
+      <view>
+        <view>游戏</view>
+      </view>
+    </view>
+    <view class="blank"></view>
+    <view  class="menu-list-box" style="height:{{cacu}}px;display:none;" >
+      <scroll-view  scroll-y class="menu-title-list" style="height:{{cacu}}px">
+        <view class='s-menu'>日常套餐</view>
+        <view class='s-menu'>日常套餐</view>
+        <view class='s-menu'> 日常套餐</view>
+      </scroll-view>
+      <scroll-view scroll-y class="menu-ul" style="height:{{cacu}}px">
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+        <view class="menu-li">
+          <view class="image-box">
+            <image src="../assets/index/menu.png" mode="scaleToFill" />
+          </view>
+          <view class="menu-ms">
+            <view>自选酱料鸡小腿大份</view>
+            <view>大声点</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="shop-cat" style="display:none;" >
+      <view class="cat">
+        <view>
+          <view>1</view>
+          <i class="iconfont icon-cart"></i>
+        </view>
+      </view>
+      <view class="total">结算</view>
+    </view>
+    <scroll-view scroll-y style="height:{{cacuMenu2}}px">
+        dgsjgdhjsghdjg
+    </scroll-view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy';
+import { connect } from 'wepy-redux';
+@connect({
+  num(state) {
+    return state.counter.num;
+  },
+  asyncNum(state) {
+    return state.counter.asyncNum;
+  },
+  sumNum(state) {
+    return state.counter.num + state.counter.asyncNum;
+  }
+})
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '贵阳德克士',
+    backgroundTextStyle: 'light',
+    navigationBarBackgroundColor: '#66C693',
+    navigationBarTextStyle: 'white',
+    disableScroll: true
+  };
+  components = {};
+  data = {
+    height: 0,
+    scrollHeight: 1
+  };
+  computed = {
+    async cacu(){
+      let arrRes = await Promise.all([
+      this.windowHeight(),
+      this.cacuPublic('.tab-header'),
+      this.cacuPublic('.shop-cat')
+    ]);
+    let p = arrRes.reduce((total,num)=>{
+      return total-num;
+    })
+    return p ;
+    },
+    async cacuMenu2(){
+      let arrRes = await Promise.all([
+      this.windowHeight(),
+      this.cacuPublic('.tab-header'),
+    ]);
+    let p = arrRes.reduce((total,num)=>{
+      return total-num;
+    })
+    return  p ;
+    }
+  };
+  methods = {};
+  windowHeight() {
+    return new Promise((resolve, reject) => {
+      let _this = this;
+
+      wx.getSystemInfo({
+        success(res) {
+          resolve(res.screenHeight);
+        }
+      });
+    });
+  }
+  cacuPublic(str) {
+    return new Promise((resolve, reject) => {
+      let _this = this;
+      let query = wx.createSelectorQuery();
+      query
+        .select(str)
+        .boundingClientRect(function(res) {
+          //在这里做计算，res里有需要的数据
+          console.log(res);
+          resolve(res.height);
+        })
+        .exec();
+    });
+  }
+  events = {};
+  async onLoad() {
+    
+  }
+}
+</script>

@@ -1,0 +1,88 @@
+<style lang="less">
+@import '../styles/login.less';
+</style>
+<template>
+  <view class="login">
+    <view class="mark flex justify-center">
+      <view>
+        <image src="../assets/login/login-logo.png" />
+        <view>娱味</view>
+      </view>
+    </view>
+    <button bindgetuserinfo="userInfoHandler" open-type="getUserInfo">微信登陆</button>
+    <view class="pos-f login-f flex justify-center">
+      登录代表您已同意
+      <view>娱味</view>用户协议、隐私协议
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy';
+export default class Login extends wepy.page {
+  config = {
+    backgroundTextStyle: 'light',
+    navigationBarTitleText: '登录',
+    navigationBarBackgroundColor: '#fff',
+    navigationBarTextStyle: 'black',
+    disableScroll: true
+  };
+  getUserInfo() {
+    wepy.getUserInfo({
+      success(res) {},
+      fail(res) {
+        console.log(res);
+      }
+    });
+  }
+  userInfoHandler(res) {
+    console.log(res);
+    var userinfo = {};
+    wx.setStorageSync('userinfo', userinfo);
+    let info = res;
+    let that = this;
+    if (info.detail.userInfo) {
+      wx.login({
+        success: function(res) {
+          if (res.code) {
+            wx.request({
+              url: 'https://read.juziioe.com/applet/wxlogin',
+              data: {
+                code: res.code,
+                userId: that.userId,
+                encryptedData: info.detail.encryptedData,
+                iv: info.detail.iv
+              },
+              header: {
+                'content-type': 'application/json' // 默认值
+              },
+              success(res) {},
+              fail(res) {}
+            });
+          } else {
+          }
+        }
+      });
+    } else {
+    }
+  }
+  onLoad() {
+     
+    wx.getStorage({
+      key: 'userinfo',
+      success(res) {
+        console.log(res);
+        if (res) {
+          console.log('111');
+          wx.switchTab({
+            url: 'index'
+          });
+    //       wx.navigateTo({
+    //     url: `index`
+    //   })
+        }
+      }
+    });
+  }
+}
+</script>
+
