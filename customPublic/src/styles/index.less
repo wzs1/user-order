@@ -45,100 +45,172 @@ page{
         height: 90rpx;
         width: 750rpx;
     }
-    .menu-list-box{
-        flex: 1;
-        display: flex;
-        overflow: hidden;
-        .menu-title-list{
-            width: 174rpx;
-            background: #F9F9F9;
-            .s-menu{
-                width: 174rpx;
-                display:inline-block;
-                height: 90rpx;
-                text-align: center;
-                line-height: 90rpx;
-                color:rgba(51,51,51,1);
-                border-bottom: 1px solid rgba(220,220,220,1);
-            }
-        }
-        .menu-ul{
-            flex: 1;
-            .menu-li{
-                width: 556rpx;
-                margin-left: 20rpx;
-                display: flex;
-                border-bottom: 1rpx solid rgba(220,220,220,1);
-                padding: 20rpx 0;
-                .image-box{
-                    width: 158rpx;
-                    height: 158rpx;
-                    border-radius:3rpx;
-                    image{
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-                .menu-ms{
-                    flex: 1;
-                    display: flex;
-                    margin-left: 20rpx;
-                    flex-direction: column;
-                    >view{
-                        flex: 1;
-                        display: flex;
-                        align-items: center;
-                    }
-                }
-            }
-        }
-        
+   
+}
+.store-info{
+    width: 710rpx;
+    height: 237rpx;
+    margin: 30rpx 20rpx 0 20rpx;
+    position: relative;
+    >image{
+        width: 710rpx;
+        height: 237rpx;
     }
-    .shop-cat{
-        height: 90rpx;
-        background: #F0F0F0;
+    .store-info-detail{
+        position: absolute;
+        bottom: -27rpx;
+        height: 108rpx;
+        left: 20rpx;
         display: flex;
-        .cat{
-            flex: 1;
-            display: flex;
-            align-items: center;
+        align-items: center;
+        image{
+            height:108rpx;
+            width: 108rpx;
+            border-radius: 3rpx;
+        }
+        .store-text{
+           margin-top: -20rpx;
+           margin-left: 18rpx;
             >view{
-                height: 78rpx;
-                width: 78rpx;
-                background: #66C693;
-                border-radius: 50%;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-left: 61rpx;
-                i{
-                    font-size: 40rpx;
+                &:first-child{
+                    font-size: 26rpx;
                     color: #fff;
                 }
-                >view{
-                    position: absolute;
-                    top:0;
-                    right:-20rpx;
-                    height: 30rpx;
-                    min-width: 30rpx;
-                    background: #EE2535;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
+                &:last-child{
                     font-size: 20rpx;
                     color: #fff;
-                    border-radius: 50%;
                 }
             }
         }
-        .total{
-           width: 232rpx;
-           background:  #66C693;
-           display: flex;
-           justify-content: center;
-           align-items: center;
-           color: #fff;
+    }
+}
+.store-detail{
+    color: #999999;
+    display: flex;
+    font-size: 26rpx;
+    i{
+        font-size: 36rpx;
+        margin: 0 20rpx;
+    }
+    margin-bottom: 19rpx;
+    &:last-child{
+        margin-bottom: 0rpx;
+    }
+}
+.store-row-1{
+    height: 40rpx;
+    margin-top:31rpx;
+}
+.store-item{
+    width: 78rpx;
+}
+.store-item-2{
+    width: 150rpx;
+}
+.store-item-2{
+    width: 200rpx;
+}
+.store-flex{
+    flex: 1;
+    padding-right: 20rpx;
+}
+.store-blank{
+    height:50rpx;
+    width: 750rpx;
+}
+.menu-list-box{
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    .menu-title-list{
+        width: 174rpx;
+        background: #F9F9F9;
+        .s-menu{
+            width: 174rpx;
+            display:inline-block;
+            height: 90rpx;
+            text-align: center;
+            line-height: 90rpx;
+            color:rgba(51,51,51,1);
+            border-bottom: 1px solid rgba(220,220,220,1);
         }
+    }
+    .menu-ul{
+        flex: 1;
+        .menu-li{
+            width: 556rpx;
+            margin-left: 20rpx;
+            display: flex;
+            border-bottom: 1rpx solid rgba(220,220,220,1);
+            padding: 20rpx 0;
+            .image-box{
+                width: 158rpx;
+                height: 158rpx;
+                border-radius:3rpx;
+                image{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .menu-ms{
+                flex: 1;
+                display: flex;
+                margin-left: 20rpx;
+                flex-direction: column;
+                >view{
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+    }
+    
+}
+.shop-cat{
+    height: 90rpx;
+    background: #F0F0F0;
+    display: flex;
+    .cat{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        >view{
+            height: 78rpx;
+            width: 78rpx;
+            background: #66C693;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 61rpx;
+            i{
+                font-size: 40rpx;
+                color: #fff;
+            }
+            >view{
+                position: absolute;
+                top:0;
+                right:-20rpx;
+                height: 30rpx;
+                min-width: 30rpx;
+                background: #EE2535;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20rpx;
+                color: #fff;
+                border-radius: 50%;
+            }
+        }
+    }
+    .total{
+       width: 232rpx;
+       background:  #66C693;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       color: #fff;
     }
 }
