@@ -1,0 +1,125 @@
+<style lang="less">
+@import '../styles/commit';
+</style>
+<template>
+    <view class="commit">
+        <view class="commit-li active">
+          <view class="menu-img">
+            <image src="../assets/commit/commit.png" mode="scaleToFill"
+              lazy-load="false">
+            </image>
+          </view>
+           <view class="menu-info">
+             <view>
+               法式经典鹅肝冻
+            </view>
+            <view>
+              ￥52
+            </view>
+          </view>
+          <view class="menu-control">
+             <view>
+               <i class="iconfont icon-jian-copy"></i>
+                <view>2 </view>
+                <i class="iconfont icon-jia1"></i>
+              </view>
+              <view>
+                  <i class="iconfont icon-shanchu"></i>
+              </view>
+          </view>
+        </view>
+         <view class="commit-li active">
+          <view class="menu-img">
+            <image src="../assets/commit/commit.png" mode="scaleToFill"
+              lazy-load="false">
+            </image>
+          </view>
+           <view class="menu-info">
+             <view>
+               法式经典鹅肝冻
+            </view>
+            <view>
+              ￥52
+            </view>
+          </view>
+          <view class="menu-control">
+             <view>
+               <i class="iconfont icon-jian-copy"></i>
+                <view>2 </view>
+                <i class="iconfont icon-jia1"></i>
+              </view>
+              <view>
+                  <i class="iconfont icon-shanchu"></i>
+              </view>
+          </view>
+        </view>
+         <view class="commit-li">
+          <view class="menu-img">
+            <image src="../assets/commit/commit.png" mode="scaleToFill"
+              lazy-load="false">
+            </image>
+          </view>
+           <view class="menu-info">
+             <view>
+               法式经典鹅肝冻
+            </view>
+            <view>
+              ￥52
+            </view>
+          </view>
+          <view class="menu-control">
+             <view>
+               <i class="iconfont icon-jian-copy"></i>
+                <view>2 </view>
+                <i class="iconfont icon-jia1"></i>
+              </view>
+              <view>
+                  <i class="iconfont icon-shanchu"></i>
+              </view>
+          </view>
+        </view>
+        <blank></blank>
+        <view class="order-info">  
+            <view class="memo">
+              <view>备注</view>
+              <input type="text" placeholder="填写备注信息"/>
+            </view>
+             <view class="z-number">
+              <view>桌号</view>
+              <view>02</view>
+            </view>
+            <view class="change">
+              <view>金币兑换</view>
+            </view>
+             <view class="total">
+              <view>共计</view>
+              <view>￥250.0</view>
+            </view>
+             <view class="fk">
+              <view>应付</view>
+              <view>游戏金币已抵换100元</view>
+              <view>￥150.0</view>
+            </view>
+        </view>
+        <view class="commit-zf">
+          <button>确认支付</button>
+        </view>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+  import blank from '@/components/blank'
+export default class Commit extends wepy.page {
+    config = {
+      navigationBarTitleText: '提交订单',
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#66C693',
+      navigationBarTextStyle: 'white',
+      disableScroll:false
+    };
+    components={
+       blank
+    }
+}
+</script>
+

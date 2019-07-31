@@ -1,0 +1,40 @@
+<style lang="less">
+@import '../styles/payment';
+</style>
+<template>
+    <view class="payment">
+            <view class="payment-top">
+                 <view class="payment-success">
+                     <i class="iconfont icon-zhifuchenggong"></i>
+                     支付成功
+                </view>
+                <view class="payment-dol">
+                        实付￥52.0
+                </view>
+            </view>
+            <view class="payment-bottom">
+                    <view>
+                        <image src="../assets/payment/game.png" mode="scaleToFill"
+                          lazy-load="false">
+                        </image>
+                    </view>
+                  <view>
+                      <view>进入游戏</view>
+                      <view>返回首页</view>
+                  </view>  
+            </view> 
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class Payment extends wepy.page {
+    config = {
+      navigationBarTitleText: '支付成功',
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#66C693',
+      navigationBarTextStyle: 'white',
+      disableScroll: true
+    };
+}
+</script>
+

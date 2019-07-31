@@ -1,0 +1,45 @@
+<style lang="less">
+@import '../styles/coin';
+</style>
+<template>
+    <view class="coin">
+        <view class="coin-li">
+           <view class="li-left">
+             <view>
+               <image src="../assets/index/logo@2x.png" mode="scaleToFill"
+                 lazy-load="false">
+               </image>
+             </view>
+             <view>
+               <view>港式牛排饭</view>
+               <view>全场可用</view>
+             </view>
+           </view>
+            <view class="li-right">
+              <view>
+                <view>8</view>
+                个金币
+              </view>
+              <view>可兑换￥100</view>
+            </view>
+        </view>
+        <blank></blank>
+    </view>
+</template>
+<script>
+import wepy from 'wepy'
+  import blank from '@/components/blank'
+export default class Coin extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的金币',
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#66C693',
+      navigationBarTextStyle: 'white',
+      enablePullDownRefresh: true,
+    };
+    components={
+      blank:blank
+    }
+}
+</script>
+

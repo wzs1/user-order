@@ -8,8 +8,8 @@
     <swiper class="tab-content" current="{{currentTab}}" duration="300" @change="switchTab" style="height:{{winHeight}}rpx">
       <swiper-item>
         <scroll-view scroll-y="true" class="scoll-h">
-          <view class="menu-list-box" style="height:{{cacu}}px;">
-            <scroll-view scroll-y class="menu-title-list" style="height:{{cacu}}px">
+          <view class="menu-list-box" >
+            <scroll-view scroll-y class="menu-title-list" style="height:cacl(100vh)">
               <view class='s-menu'>日常套餐</view>
               <view class='s-menu'>日常套餐</view>
               <view class='s-menu'> 日常套餐</view>
@@ -44,6 +44,34 @@
                   <view>大声点</view>
                 </view>
               </view>
+                <view class="menu-li">
+                <view class="image-box">
+                  <image src="../assets/index/menu.png" mode="scaleToFill" />
+                </view>
+                <view class="menu-ms">
+                  <view>自选酱料鸡小腿大份</view>
+                  <view>大声点</view>
+                </view>
+              </view>
+                <view class="menu-li">
+                <view class="image-box">
+                  <image src="../assets/index/menu.png" mode="scaleToFill" />
+                </view>
+                <view class="menu-ms">
+                  <view>自选酱料鸡小腿大份</view>
+                  <view>大声点</view>
+                </view>
+              </view>
+                <view class="menu-li">
+                <view class="image-box">
+                  <image src="../assets/index/menu.png" mode="scaleToFill" />
+                </view>
+                <view class="menu-ms">
+                  <view>自选酱料鸡小腿大份</view>
+                  <view>大声点</view>
+                </view>
+              </view>
+              
               <view class="menu-li">
                 <view class="image-box">
                   <image src="../assets/index/menu.png" mode="scaleToFill" />
