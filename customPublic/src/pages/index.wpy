@@ -7,87 +7,91 @@
     </view>
     <swiper class="tab-content" current="{{currentTab}}" duration="300" @change="switchTab" style="height:{{winHeight}}rpx">
       <swiper-item>
-        <scroll-view scroll-y="true" class="scoll-h">
-          <view class="menu-list-box" >
-            <scroll-view scroll-y class="menu-title-list" style="height:cacl(100vh)">
-              <view class='s-menu'>日常套餐</view>
-              <view class='s-menu'>日常套餐</view>
-              <view class='s-menu'> 日常套餐</view>
+        <scroll-view class="scoll-h">
+          <view class="menu-list-box">
+            <scroll-view scroll-y class="menu-title-list" style="height:{{menuHeight}}rpx">
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
+              <view class="s-menu">日常套餐</view>
             </scroll-view>
-            <scroll-view scroll-y class="menu-ul" style="height:{{cacu}}px">
+            <scroll-view scroll-y class="menu-ul" style="height:{{menuHeight}}rpx">
               <view class="menu-li">
                 <view class="image-box">
                   <image src="../assets/index/menu.png" mode="scaleToFill" />
                 </view>
                 <view class="menu-ms">
-                  <view>自选酱料鸡小腿大份</view>
-                  <view>大声点</view>
-                </view>
-              </view>
-             
-             
-              <view class="menu-li">
-                <view class="image-box">
-                  <image src="../assets/index/menu.png" mode="scaleToFill" />
-                </view>
-                <view class="menu-ms">
-                  <view>自选酱料鸡小腿大份</view>
-                  <view>大声点</view>
-                </view>
-              </view>
-              <view class="menu-li">
-                <view class="image-box">
-                  <image src="../assets/index/menu.png" mode="scaleToFill" />
-                </view>
-                <view class="menu-ms">
-                  <view>自选酱料鸡小腿大份</view>
-                  <view>大声点</view>
-                </view>
-              </view>
-                <view class="menu-li">
-                <view class="image-box">
-                  <image src="../assets/index/menu.png" mode="scaleToFill" />
-                </view>
-                <view class="menu-ms">
-                  <view>自选酱料鸡小腿大份</view>
-                  <view>大声点</view>
-                </view>
-              </view>
-                <view class="menu-li">
-                <view class="image-box">
-                  <image src="../assets/index/menu.png" mode="scaleToFill" />
-                </view>
-                <view class="menu-ms">
-                  <view>自选酱料鸡小腿大份</view>
-                  <view>大声点</view>
-                </view>
-              </view>
-                <view class="menu-li">
-                <view class="image-box">
-                  <image src="../assets/index/menu.png" mode="scaleToFill" />
-                </view>
-                <view class="menu-ms">
-                  <view>自选酱料鸡小腿大份</view>
-                  <view>大声点</view>
-                </view>
-              </view>
-              
-              <view class="menu-li">
-                <view class="image-box">
-                  <image src="../assets/index/menu.png" mode="scaleToFill" />
-                </view>
-                <view class="menu-ms">
-                  <view>自选酱料鸡小腿大份</view>
-                  <view>大声点</view>
+                  <view class="menu-title">自选酱料鸡小腿大份</view>
+                  <view class="control">
+                    <view>
+                      <view>￥52</view>
+                      <view>元/份</view>
+                    </view>
+                    <view>
+                      <i class="iconfont icon-jian-copy"></i>
+                      <view>2</view>
+                      <i class="iconfont icon-jia1"></i>
+                    </view>
+                  </view>
                 </view>
               </view>
             </scroll-view>
           </view>
           <view class="shop-cat">
             <view class="cat">
-              <view>
+              <view class="cart" catchtap='cartControl'>
                 <view>1</view>
                 <i class="iconfont icon-cart"></i>
+              </view>
+              <view class="select-menu" wx:if="{{cartShow}}"  @tap='cartClose'>
+                <view class="menu-cart"  >
+                  <view class="menu-cart-box" catchtap='stand'>
+                    <view class="title">
+                      <view>购物车</view>
+                      <view catchtap='delete'>
+                        <i class="iconfont icon-shanchu"></i> 清空购物车
+                      </view>
+                    </view>
+                    <view class="menu-cart-list">
+                      <view>自选酱料鸡腿大份</view>
+                      <view>￥52</view>
+                      <view>
+                        <i class="iconfont icon-jian-copy" catchtap='minus' ></i>
+                        <view>2</view>
+                        <i class="iconfont icon-jia1" catchtap='add'></i>
+                      </view>
+                    </view>
+                     <view class="menu-cart-list">
+                      <view>自选酱料鸡腿大份</view>
+                      <view>￥52</view>
+                      <view>
+                        <i class="iconfont icon-jian-copy"></i>
+                        <view>2</view>
+                        <i class="iconfont icon-jia1"></i>
+                      </view>
+                    </view>
+                     <view class="menu-cart-list">
+                      <view>自选酱料鸡腿大份</view>
+                      <view>￥52</view>
+                      <view>
+                        <i class="iconfont icon-jian-copy"></i>
+                        <view>2</view>
+                        <i class="iconfont icon-jia1"></i>
+                      </view>
+                    </view>
+                  </view>
+                </view>
               </view>
             </view>
             <view class="total">结算</view>
@@ -103,12 +107,8 @@
                 <image src="../assets/index/logo@2x.png" mode="scaleToFill" />
               </view>
               <view class="store-text">
-                <view>
-                  快乐柠檬（贵阳国贸天易店）
-                </view>
-                <view>
-                  电话：0851-4516235
-                </view>
+                <view>快乐柠檬（贵阳国贸天易店）</view>
+                <view>电话：0851-4516235</view>
               </view>
             </view>
           </view>
@@ -154,15 +154,13 @@
           <blank></blank>
           <view class="store-detail store-row-1">
             <i class="iconfont icon-dianpu"></i>
-            <view class=" store-item">店铺：</view>
+            <view class="store-item">店铺：</view>
             <view class="store-flex">快乐柠檬（贵阳国贸天衣店）</view>
           </view>
           <view class="store-detail">
             <i class="iconfont icon-dizhi"></i>
             <view class="store-item">地址：</view>
-            <view class="store-flex">
-              贵阳市观山湖区长岭南路贵州金融城max-D座 12号 贵阳市观山湖
-            </view>
+            <view class="store-flex">贵阳市观山湖区长岭南路贵州金融城max-D座 12号 贵阳市观山湖</view>
           </view>
           <view class="store-detail">
             <i class="iconfont icon-shijian"></i>
@@ -172,16 +170,13 @@
           <view class="store-detail">
             <i class="iconfont icon-jinbi"></i>
             <view class="store-item-2">金币退换规则：</view>
-            <view class="store-flex">通过小游戏通关获得金币，每通过一关 获得一个金币，一个金币抵用1元钱。 用餐更优惠哦！通过小游戏通关获得金 币，每通过一关获得一个金币，一个金币抵用1元钱。用餐更优惠哦！
-            </view>
+            <view class="store-flex">通过小游戏通关获得金币，每通过一关 获得一个金币，一个金币抵用1元钱。 用餐更优惠哦！通过小游戏通关获得金 币，每通过一关获得一个金币，一个金币抵用1元钱。用餐更优惠哦！</view>
           </view>
           <view class="store-blank"></view>
         </scroll-view>
       </swiper-item>
       <swiper-item>
-        <scroll-view scroll-y="true" class="scoll-h">
-          123123123回复的话
-        </scroll-view>
+        <scroll-view scroll-y="true" class="scoll-h">123123123回复的话</scroll-view>
       </swiper-item>
     </swiper>
   </view>
@@ -195,7 +190,7 @@
     box-sizing: border-box;
     overflow: hidden;
     line-height: 80rpx;
-    background: #F7F7F7;
+    background: #f7f7f7;
     font-size: 16px;
     white-space: nowrap;
     position: fixed;
@@ -241,15 +236,15 @@
     }
   }
   .tab-item.active {
-    color: #66C693;
+    color: #66c693;
     position: relative;
   }
   .tab-item.active:after {
-    content: "";
+    content: '';
     display: block;
     height: 8rpx;
     width: 52rpx;
-    background: #66C693;
+    background: #66c693;
     position: absolute;
     bottom: 0;
     left: 5rpx;
@@ -279,7 +274,7 @@
   import {
     connect
   } from 'wepy-redux';
-  import blank from '@/components/blank'
+  import blank from '@/components/blank';
   @connect({
     num(state) {
       return state.counter.num;
@@ -294,7 +289,7 @@
   export default class Index extends wepy.page {
     components = {
       blank: blank
-    }
+    };
     config = {
       navigationBarTitleText: '贵阳德克士',
       backgroundTextStyle: 'light',
@@ -305,7 +300,7 @@
     methods = {
       // 滚动切换标签样式
       switchTab(e) {
-        this.currentTab = e.detail.current
+        this.currentTab = e.detail.current;
         this.checkCor();
       },
       // 点击标题切换当前页时改变样式
@@ -314,21 +309,38 @@
         if (this.currentTaB == cur) {
           return false;
         } else {
-          this.currentTab = cur
+          this.currentTab = cur;
         }
+      },
+        delete(){
+        console.log('delete')
+      },
+      minus(){
+
+      },
+      add(){
+
+      },
+      cartControl(){
+        this.cartShow = !this.cartShow;
+      },
+      cartClose(){
+             this.cartShow = false;
+      },
+      stand(){
+        // 防止点击购物车被关闭
       }
     };
     data = {
-      winHeight: "", //窗口高度
+      winHeight: '', //窗口高度
       currentTab: 0, //预设当前项的值
       scrollLeft: 0, //tab标题的滚动条位置
+      rpxR: 0,
+      menuHeight: 0,
+      cartShow:false
     };
     components = {};
-    async onShow() {};
-    // async onLoad() {
-    //     // await this.getCities();
-    // };
-    //判断当前滚动超过一屏时，设置tab标题滚动条。
+    async onShow() {}
     cacuPublic(str) {
       return new Promise((resolve, reject) => {
         let _this = this;
@@ -337,60 +349,56 @@
           .select(str)
           .boundingClientRect(function(res) {
             //在这里做计算，res里有需要的数据
-            console.log(res);
-            resolve(res['height']||0);
+            resolve(res['height'] || 0);
           })
           .exec();
       });
     }
+    caclMenuScrollHeight() {
+      let _this = this;
+      let query = wx.createSelectorQuery();
+      query
+        .select('.shop-cat')
+        .boundingClientRect(function(res) {
+          _this.menuHeight = _this.winHeight - res.height * _this.rpxR;
+          _this.$apply();
+        })
+        .exec();
+    }
     checkCor() {
       if (this.currentTab > 4) {
-        this.scrollLeft = 300
+        this.scrollLeft = 300;
       } else {
-        this.scrollLeft = 0
+        this.scrollLeft = 0;
       }
     }
-    async onLoad() {
+    async sysInfo() {
+      let p = await this.cacuPublic('.tab-h');
       var that = this;
-      let p = await this.cacuPublic('.tab-h')
-      console.log(p)
-      //  高度自适应
-      wepy.getSystemInfo({
-        success: function(res) {
-          var clientHeight = res.windowHeight,
-            clientWidth = res.windowWidth,
-            rpxR = 750 / clientWidth;
-          var calc = clientHeight * rpxR - p*2;
-          that.winHeight = calc;
-          that.$apply();
-        }
+      return new Promise((resolve, reject) => {
+        wepy.getSystemInfo({
+          success: function(res) {
+            var clientHeight = res.windowHeight,
+              clientWidth = res.windowWidth,
+              rpxR = 750 / clientWidth;
+            var calc = clientHeight * rpxR - p * rpxR;
+            that.rpxR = rpxR;
+            that.winHeight = calc;
+            that.$apply();
+            resolve();
+          }
+        });
       });
     }
-    footerTap() {
-      return this.$wxapp.footerTap
+    async onLoad() {
+      await this.sysInfo();
+      //  高度自适应
+      this.caclMenuScrollHeight();
     }
+  
     computed = {
-      async cacu() {
-        let arrRes = await Promise.all([
-          this.windowHeight(),
-          this.cacuPublic('.shop-cat')
-        ]);
-        let p = arrRes.reduce((total, num) => {
-          return total - num;
-        })
-        console.log(p);
-        return p;
-      },
-      async cacuMenu2() {
-        let arrRes = await Promise.all([
-          this.windowHeight(),
-        ]);
-        let p = arrRes.reduce((total, num) => {
-          return total - num;
-        })
-        return p;
-      }
-    }
+    
+    };
     windowHeight() {
       return new Promise((resolve, reject) => {
         let _this = this;
@@ -400,10 +408,6 @@
           }
         });
       });
-    }
-    onReachBottom() {};
-    onShareAppMessage() {
-      return config.shareConfig;
     }
   }
 </script>
